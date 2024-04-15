@@ -1,0 +1,2 @@
+class TrainingWeek < ApplicationRecord
+end
