@@ -1,0 +1,2 @@
+module TrainingWeekWorkoutsHelper
+end
