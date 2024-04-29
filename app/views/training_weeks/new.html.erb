@@ -1,0 +1,22 @@
+<h1>New Training Week</h1>
+
+<%= form_with model:@training_week do |form| %>
+  <div>
+    <%= form.label :start_date %> <br>
+    <%= form.date_field :start_date %>
+    <% @training_week.errors.full_messages_for(:start_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.fields_for :workouts do |workout_form| %>
+      <%= workout_form.label :body %>
+      <%= workout_form.text_field :body %>
+    <% end %>
+
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
