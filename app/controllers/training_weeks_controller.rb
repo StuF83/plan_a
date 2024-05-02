@@ -1,11 +1,14 @@
 class TrainingWeeksController < ApplicationController
+  def index
+    @training_weeks = TrainingWeek.all
+  end
+
   def show
     @training_week = TrainingWeek.find(params[:id])
   end
 
   def new
-    @training_week = TrainingWeek.new
-    2.times {@training_week.workouts.build}
+    @training_week = TrainingWeek.new(workouts: [Workout.new])
   end
 
   def create
@@ -16,6 +19,13 @@ class TrainingWeeksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @training_week = TrainingWeek.find(params[:id])
+    @training_week.destroy
+
+    redirect_to training_weeks_url
   end
 
   def show_current_training_week

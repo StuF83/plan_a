@@ -8,12 +8,11 @@
       <div><%= message %></div>
     <% end %>
   </div>
-  <div>
-    <%= form.fields_for :workouts do |workout_form| %>
-      <%= workout_form.label :body %>
-      <%= workout_form.text_field :body %>
-    <% end %>
 
+  <div class="workouts">
+    <%= form.fields_for :workouts do |workout_form| %>
+      <%= render "workouts/form", form: workout_form %>
+    <% end %>
   </div>
 
   <div>
