@@ -1,5 +1,9 @@
 <h1>Current Training Week</h1>
-<p><%= @training_week.first.id %></p>
-<% @training_week.first.workouts.each do |workout| %>
-  <p><%= workout.body %></p>
+<% if @training_week.exists? %>
+  <p><%= @training_week.first.id %></p>
+  <% @training_week.first.workouts.each do |workout| %>
+    <p><%= workout.body %></p>
+  <% end %>
+<% else %>
+  <p>no training week</p>
 <% end %>
