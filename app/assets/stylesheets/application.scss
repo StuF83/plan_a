@@ -1,5 +1,12 @@
 // Configuration
+@import "config/reset";
+@import "config/global";
 @import "config/variables";
 
 // Layouts
-@import "layouts/container";
+
+// Components
+@import "components/workout";
+
+// Actiontext
+@import "actiontext";
