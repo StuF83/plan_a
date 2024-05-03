@@ -39,7 +39,7 @@ class TrainingWeeksController < ApplicationController
     end
 
     def training_week_params
-      params.require(:training_week).permit(:start_date, workouts_attributes: [:id, :body])
+      params.require(:training_week).permit(:start_date, workouts_attributes: [:id, :content])
 
     end
 end
