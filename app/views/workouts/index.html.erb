@@ -2,5 +2,6 @@
 
 <% @workouts.each do |workout| %>
   <p><%= workout.content %></p>
+  <p><%= link_to"Edit", edit_workout_path(workout) %></p>
   <p><%= link_to "Destroy", workout, data: {turbo_method: :delete} %></p>
 <% end %>
