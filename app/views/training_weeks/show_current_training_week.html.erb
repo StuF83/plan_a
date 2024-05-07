@@ -1,16 +1,21 @@
-<div class="stack">
 
-  <h1>Current Training Week</h1>
+<div class="box">
+  <div class="center">
+    <div class="stack">
 
-  <% if @training_week.exists? %>
-    <div class="workout">
-      <h3><%= @training_week.first.start_date %></h3>
-      <% @training_week.first.workouts.each do |workout| %>
-        <div><%= workout.content %></div>
+      <h1>Current Training Week</h1>
+
+      <% if @training_week.exists? %>
+        <div class="workout">
+          <h3><%= @training_week.first.start_date %></h3>
+          <% @training_week.first.workouts.each do |workout| %>
+            <div><%= workout.content %></div>
+          <% end %>
+          <% else %>
+            <p>no training week</p>
+        </div>
       <% end %>
-      <% else %>
-        <p>no training week</p>
-    </div>
-  <% end %>
 
+    </div>
+  </div>
 </div>
