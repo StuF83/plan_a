@@ -35,7 +35,7 @@ class TrainingWeeksController < ApplicationController
   private
 
     def current_training_week
-      @training_week = TrainingWeek.where(start_date: ((Date.today - 6.day)..Date.today))
+      @training_week = TrainingWeek.where(start_date: ((Date.today - 6.day)..Date.today)).first
     end
 
     def training_week_params

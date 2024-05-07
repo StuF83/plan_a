@@ -1,0 +1,14 @@
+<h1>hi from edit</h1>
+
+<%= form_with model: @workout do |form| %>
+  <%= form.label :content %>
+  <%= form.rich_text_area :content %>
+  <% @workout.errors.full_messages_for(:content).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

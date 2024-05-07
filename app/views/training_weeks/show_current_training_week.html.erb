@@ -5,10 +5,10 @@
 
       <h1>Current Training Week</h1>
 
-      <% if @training_week.exists? %>
+      <% if @training_week %>
         <div class="workout">
-          <h3><%= @training_week.first.start_date %></h3>
-          <% @training_week.first.workouts.each do |workout| %>
+          <h3><%= @training_week.start_date %></h3>
+          <% @training_week.workouts.each do |workout| %>
             <div><%= workout.content %></div>
           <% end %>
           <% else %>

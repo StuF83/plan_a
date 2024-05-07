@@ -22,6 +22,21 @@ class WorkoutsController < ApplicationController
     @workouts = Workout.all
   end
 
+  def edit
+    @workout = Workout.find(params[:id])
+  end
+
+  def update
+    @workout = Workout.find(params[:id])
+    @workout.update(workout_params)
+
+    if @workout.save
+      redirect_to @workout
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @workout = Workout.find(params[:id])
     @workout.destroy

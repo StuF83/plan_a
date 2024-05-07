@@ -1,7 +1,7 @@
 <h1>Training weeks index page</h1>
 
 <% @training_weeks.each do |training_week| %>
-  <p><%= training_week.start_date %></p>
+  <p><%= link_to "#{training_week.start_date}", training_week %></p>
   <p><%= link_to "Destroy", training_week, data: {turbo_method: :delete} %></p>
 
 <% end %>
