@@ -12,13 +12,13 @@
   </head>
 
   <body class="center-body stack">
-  <nav class="cluster" style="justify-content:space-between">
-    <div><%= link_to "Home", root_path %></div>
-    <div class="cluster" style="justify-content:flex-start;">
-      <div><%= link_to "Training Weeks", training_weeks_path %></div>
-      <div><%= link_to "Workouts", workouts_path%></div>
-    </div>
-  </nav>
+    <nav class="cluster" style="justify-content:space-between">
+      <div><%= link_to "Home", root_path %></div>
+      <div class="cluster" style="justify-content:flex-start;">
+        <div><%= link_to "Training Weeks", training_weeks_path %></div>
+        <div><%= link_to "Workouts", workouts_path%></div>
+      </div>
+    </nav>
 
     <%= yield %>
   </body>
