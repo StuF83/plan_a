@@ -82,3 +82,26 @@ footer {
   justify-content: flex-start;
   align-items: center;
 }
+
+.center-nav {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: 90ch;
+}
+
+.center-body {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: 90ch;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@supports (width: min(20ch, 100%)) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(20ch, 100%), 1fr));
+  }
+}
